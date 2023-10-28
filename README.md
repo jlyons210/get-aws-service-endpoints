@@ -6,7 +6,7 @@ Polls the AWS SSM API to retrieve endpoints for all or specified regions and ser
 ### All endpoints
 
 ```
-./get-aws-service-endpoints.py > all-endpoints.json
+$ ./get-aws-service-endpoints.py > all-endpoints.json
 This script will retrieve all AWS service endpoints for all services in all regions.
 This will make a large number of API calls and may take a long time.
 Are you sure you want to continue? (y/n) y
