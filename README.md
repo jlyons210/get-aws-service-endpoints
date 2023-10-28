@@ -1,6 +1,8 @@
 # get-aws-service-endpoints
 Polls the AWS SSM API to retrieve endpoints for all or specified regions and services.
 
+Messages are printed to `stderr`, and the JSON to `stdout` so that JSON output can be piped.
+
 ## Examples
 
 ### All endpoints
