@@ -214,6 +214,12 @@ def parse_arguments() -> argparse.Namespace:
                         dest='service_overrides',
                         help='Overrides with specified services, comma-separated',
                         required = False)
+    
+    parser.add_argument('--ignore-warning', '-i',
+                        dest='ignore_warning',
+                        action='store_true',
+                        help='Ignore warning',
+                        required = False)
 
     parser.add_argument('--version', '-v',
                         action = 'version',
@@ -242,7 +248,8 @@ def main() -> None:
     :return: None
     """
 
-    if not arguments.region_overrides and not arguments.service_overrides:
+    if not arguments.region_overrides and not arguments.service_overrides \
+        and not arguments.ignore_warning:
         confirm_unfiltered_execution()
 
     output_json = generate_output_json()
