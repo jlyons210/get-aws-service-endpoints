@@ -16,7 +16,7 @@ Retrieving all AWS regions... found 32 regions.
 Retrieving all services in af-south-1... found 182 services.
 Retrieving endpoints for af-south-1...................... done.
 ...
-cat all-endpoints.json
+$ cat all-endpoints.json
 {
     "af-south-1": {
         "accessanalyzer": "access-analyzer.af-south-1.amazonaws.com",
