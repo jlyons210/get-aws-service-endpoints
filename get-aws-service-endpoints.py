@@ -68,6 +68,7 @@ def generate_output_json() -> str:
                   end = '',
                   flush = True,
                   file = sys.stderr)
+
         else:
             print(f'Retrieving endpoint(s) for {", ".join(region_services)} in {region}...',
                   end = '',
@@ -116,8 +117,7 @@ def get_regions(ssm_client) -> []:
 
         regions = [region['Value']
                    for page in iterator
-                   for region in page['Parameters']
-                   if region['Value'] != 'global']
+                   for region in page['Parameters']]
 
         print(f'found {len(regions)} regions.', file = sys.stderr)
 
@@ -242,11 +242,9 @@ def main() -> None:
     :return: None
     """
 
-    # Are you sure you want to make thousands of API calls?
     if not arguments.region_overrides and not arguments.service_overrides:
         confirm_unfiltered_execution()
 
-    # Do the needful
     output_json = generate_output_json()
     print(output_json)
 
