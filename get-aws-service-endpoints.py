@@ -20,12 +20,12 @@ def confirm_unfiltered_execution() -> None:
 
     print('This script will retrieve all AWS service endpoints for all services in all regions.')
     print('This will make a large number of API calls and may take a long time.')
-    print('Are you sure you want to continue? (y/n) ',
+    print('Are you sure you want to continue? (yasssqueeeeen/no) ',
           end = '',
           flush = True,
           file = sys.stderr)
 
-    if input().lower() != 'y':
+    if input().lower() != 'yasssqueeeeen':
         quit_error('User aborted program')
 
 
@@ -214,7 +214,7 @@ def parse_arguments() -> argparse.Namespace:
                         dest='service_overrides',
                         help='Overrides with specified services, comma-separated',
                         required = False)
-    
+
     parser.add_argument('--ignore-warning', '-i',
                         dest='ignore_warning',
                         action='store_true',
